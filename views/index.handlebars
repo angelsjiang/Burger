@@ -1,0 +1,28 @@
+<h1>Et-Da-Burger!</h1>
+
+<h2>Burgers you haven't eaten!</h2>
+<ul>
+    {{#each burger}}
+        {{#unless devoured}}
+            {{> burgers/burger_block devoured=false}}
+        {{/unless}}
+    {{/each}}
+</ul>
+<hr>
+<h2>Burgers you ate!</h2>
+<ul>
+    {{#each burger}}
+        {{#if devoured}}
+            {{> burgers/burger_block devoured=true}}
+        {{/if}}
+    {{/each}}
+</ul>
+<hr>
+<br>
+
+<h3>Get another burger?</h3>
+<form class="create-form">
+    <textarea id="burger_name"></textarea>
+    <br>
+    <button type="submit">Get burger!</button>
+</form>
