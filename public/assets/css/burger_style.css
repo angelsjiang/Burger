@@ -8,3 +8,7 @@ body {
     width: 150px;
 }
 
+table {
+    margin: auto;
+    text-align: left;
+}
