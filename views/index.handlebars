@@ -1,22 +1,19 @@
+<img id="burger_icon" src="/assets/img/burger.jpg"/>
 <h1>Et-Da-Burger!</h1>
 
 <h2>Burgers you haven't eaten!</h2>
-<ul>
-    {{#each burger}}
-        {{#unless devoured}}
-            {{> burgers/burger_block devoured=true}}
-        {{/unless}}
-    {{/each}}
-</ul>
+{{#each burger}}
+    {{#unless devoured}}
+        {{> burgers/burger_block devoured=true}}
+    {{/unless}}
+{{/each}}
 <hr>
 <h2>Burgers you ate!</h2>
-<ul>
-    {{#each burger}}
-        {{#if devoured}}
-            {{> burgers/burger_block devoured=false}}
-        {{/if}}
-    {{/each}}
-</ul>
+{{#each burger}}
+    {{#if devoured}}
+        {{> burgers/burger_block devoured=false}}
+    {{/if}}
+{{/each}}
 <hr>
 <br>
 

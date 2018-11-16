@@ -1,0 +1,11 @@
+body {
+    background-color: #aad9be;
+    text-align: center;
+    line-height: 1.5;
+};
+
+#burger_icon { 
+    /* why not working? */
+    width: 150px;
+};
+
