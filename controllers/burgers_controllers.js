@@ -2,15 +2,6 @@ var express = require("express");
 var router = express.Router();
 var burger = require("../models/burger.js");
 
-router.get('/', function(req, res) {
-    burger.all(function(data) {
-        var hbsObject = {
-            burger: data
-        };
-        console.log(hbsObject);
-        res.render("index", hbsObject);
-    });
-});
 
 router.post('/api/burgers', function(req, res) {
     console.log(req.body.name + " and " + req.body.devoured);
@@ -37,6 +28,17 @@ router.put("/api/burgers/:id", function(req, res) {
         else {
             res.status(200).end();
         }
+    });
+});
+
+
+router.get('*', function(req, res) {
+    burger.all(function(data) {
+        var hbsObject = {
+            burger: data
+        };
+        console.log(hbsObject);
+        res.render("index", hbsObject);
     });
 });
 
